@@ -1,0 +1,11 @@
+apiVersion: config.istio.io/v1alpha2
+kind: RouteRule
+metadata:
+  name: meeting-server-timeout
+spec:
+  destination:
+    name: meeting-server
+  precedence: 10
+  httpReqTimeout:
+    simpleTimeout:
+      timeout: 0.1s
